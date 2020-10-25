@@ -1,7 +1,7 @@
 # logger
-The simple C++ logger.
+The simple C++ logger (status: permanently develop).
 
 ### Start examples
-Run in terminal a script.
+Run in terminal.
 
 `. run.sh`
