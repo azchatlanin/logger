@@ -1,9 +1,9 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary")
 
 cc_binary(
-  name = "main",
+  name = "examples",
   srcs = ["main.cpp"],
   deps = [
-    "//src/logger:logger",
+    "//logger:logger",
   ]
 )

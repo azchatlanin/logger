@@ -1,4 +1,5 @@
 export PROJECT_NAME=logger
+export PROJECT_BUILD=examples
 export BUILD_VERSION=0.9.$(date +%s)
 
 clear
@@ -20,13 +21,13 @@ divider.header() {
 
 divider.build() {
   hl.subtle "Build project"
-  run "bazel build main"
+  run "bazel build $PROJECT_BUILD"
 }
 
 divider.run() {
   hl.subtle "Run project"
   run.set-all show-output-on
-  run "bazel run main"
+  run "bazel run $PROJECT_BUILD"
 }
 
 main() {

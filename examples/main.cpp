@@ -1,4 +1,4 @@
-#include "src/logger/logger.hpp"
+#include "logger/logger.hpp"
 #include <vector>
 
 int main(int argc, char* argv[])
