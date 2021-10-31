@@ -93,7 +93,7 @@ class log
 
   static void print()
   {
-    std::cout << '\n';
+    std::cout << std::endl;
   }
 
   template<typename T, typename... Args>
