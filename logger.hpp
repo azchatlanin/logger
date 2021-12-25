@@ -9,11 +9,11 @@
 #include <iterator>
 #include <string>
 
-#define LOGGER___INFO_COLOR_SCHEME  "\e[94m INFO: \033[0m"
-#define LOGGER___WARN_COLOR_SCHEME  "\e[33m WARN: \033[0m"
-#define LOGGER___ERROR_COLOR_SCHEME "\e[31m ERROR: "
+#define LOGGER___INFO_COLOR_SCHEME  "\033[94m INFO: \033[0m"
+#define LOGGER___WARN_COLOR_SCHEME  "\033[33m WARN: \033[0m"
+#define LOGGER___ERROR_COLOR_SCHEME "\033[31m ERROR: "
 #define LOGGER___PART_SEPARATOR     ": --> "
-#define LOGGER___DEVIDER            ", "
+#define LOGGER___DEVIDER            " "
 #define LOGGER___STRINGIFY(x)       #x
 #define LOGGER___TOSTRING(x)        LOGGER___STRINGIFY(x)
 #define LOGGER___TRACE_ON           __FILE__ ":" LOGGER___TOSTRING(__LINE__)
@@ -101,7 +101,7 @@ class log
   {
     print_v(first);
     print(args...);
-  };
+  }
 
  public:
   template<typename T, typename... Args>
@@ -110,7 +110,7 @@ class log
     first_elem = false;
     std::cout << LOGGER___INFO_COLOR_SCHEME << first << LOGGER___PART_SEPARATOR;
     print(args...);
-  };
+  }
 
   template<typename T, typename... Args>
   static void warn(T first, Args... args)
@@ -118,7 +118,7 @@ class log
     first_elem = false;
     std::cout << LOGGER___WARN_COLOR_SCHEME << first << LOGGER___PART_SEPARATOR;
     print(args...);
-  };
+  }
 
   template<typename T, typename... Args>
   static void error(T first, Args... args)
@@ -127,7 +127,7 @@ class log
     std::cout << LOGGER___ERROR_COLOR_SCHEME << first << LOGGER___PART_SEPARATOR;
     print(args...);
     std::cout << "\033[0m";
-  };
+  }
 
   template<typename T, std::enable_if_t<is_integral_v<T>, int> = 0>
   static void print_v(const T& data)
